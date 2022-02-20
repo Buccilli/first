@@ -8,6 +8,8 @@ class RoleResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :director
+
   belongs_to :movie
 
   # Indirect associations
