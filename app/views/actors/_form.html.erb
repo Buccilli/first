@@ -1,7 +1,6 @@
 <% was_validated = actor.errors.any? %>
 
 <%= form_with(model: actor, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for movie_id start -->
   <div class="form-group">
     <% movie_class = "form-control" %>
     <% movie_was_invalid = actor.errors.include?(:movie) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :movie_id %>
-    <!-- Input for movie_id start -->
     <%= f.collection_select :movie_id, Movie.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for movie_id end -->
     <% if movie_was_invalid %>
       <% actor.errors.full_messages_for(:movie).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,6 +23,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for movie_id end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

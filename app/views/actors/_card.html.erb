@@ -6,13 +6,11 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Movie</dt>
-      <!-- Display movie_id start -->
       <dd>
         <% if @actor.movie.present? %>
           <%= link_to actor.movie, actor.movie %>
         <% end %>
       </dd>
-      <!-- Display movie_id end -->
 
     </dl>
 
@@ -21,21 +19,17 @@
         <%= link_to_show_or_back actor, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link actor start -->
       <div class="col">
         <%= link_to edit_actor_url(actor), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link actor end -->
 
-      <!-- Delete link actor start -->
       <div class="col">
         <%= link_to actor, method: :delete, data: { confirm: "Do you really want to delete this actor?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link actor end -->
     </div>
   </div>
 

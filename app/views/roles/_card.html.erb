@@ -6,31 +6,25 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Movie</dt>
-      <!-- Display movie_id start -->
       <dd>
         <% if @role.movie.present? %>
           <%= link_to role.movie, role.movie %>
         <% end %>
       </dd>
-      <!-- Display movie_id end -->
 
       <dt>Actor</dt>
-      <!-- Display actor_id start -->
       <dd>
         <% if @role.actor.present? %>
           <%= link_to role.actor, role.actor %>
         <% end %>
       </dd>
-      <!-- Display actor_id end -->
 
       <dt>Director</dt>
-      <!-- Display director_id start -->
       <dd>
         <% if @role.director.present? %>
           <%= link_to role.director, role.director %>
         <% end %>
       </dd>
-      <!-- Display director_id end -->
 
     </dl>
 
@@ -39,21 +33,17 @@
         <%= link_to_show_or_back role, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link role start -->
       <div class="col">
         <%= link_to edit_role_url(role), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link role end -->
 
-      <!-- Delete link role start -->
       <div class="col">
         <%= link_to role, method: :delete, data: { confirm: "Do you really want to delete this role?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link role end -->
     </div>
   </div>
 

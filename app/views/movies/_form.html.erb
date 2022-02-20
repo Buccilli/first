@@ -1,7 +1,6 @@
 <% was_validated = movie.errors.any? %>
 
 <%= form_with(model: movie, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for title start -->
   <div class="form-group">
     <% title_class = "form-control" %>
     <% title_was_invalid = movie.errors.include?(:title) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :title %>
-    <!-- Input for title start -->
     <%= f.text_field :title, class: title_class, placeholder: "Enter title" %>
-    <!-- Input for title end -->
     <% if title_was_invalid %>
       <% movie.errors.full_messages_for(:title).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for title end -->
-  <!-- Label and input for year start -->
   <div class="form-group">
     <% year_class = "form-control" %>
     <% year_was_invalid = movie.errors.include?(:year) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :year %>
-    <!-- Input for year start -->
     <%= f.date_select :year, class: year_class, placeholder: "Enter year" %>
-    <!-- Input for year end -->
     <% if year_was_invalid %>
       <% movie.errors.full_messages_for(:year).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for year end -->
-  <!-- Label and input for director_id start -->
   <div class="form-group">
     <% director_class = "form-control" %>
     <% director_was_invalid = movie.errors.include?(:director) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :director_id %>
-    <!-- Input for director_id start -->
     <%= f.number_field :director_id, class: director_class, placeholder: "Enter director" %>
-    <!-- Input for director_id end -->
     <% if director_was_invalid %>
       <% movie.errors.full_messages_for(:director).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,6 +67,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for director_id end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>
