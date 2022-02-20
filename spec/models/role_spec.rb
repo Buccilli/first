@@ -4,6 +4,8 @@ RSpec.describe Role, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:director) }
+
     it { should belong_to(:movie) }
 
     end

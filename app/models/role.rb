@@ -1,6 +1,8 @@
 class Role < ApplicationRecord
   # Direct associations
 
+  belongs_to :director
+
   belongs_to :movie
 
   # Indirect associations
