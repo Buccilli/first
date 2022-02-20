@@ -8,6 +8,8 @@ class MovieResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :actors
+
   has_many   :roles
 
   # Indirect associations
