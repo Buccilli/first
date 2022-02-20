@@ -6,6 +6,8 @@ class ActorResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :roles
+
   belongs_to :movie
 
   # Indirect associations
