@@ -4,6 +4,8 @@ RSpec.describe Actor, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:roles) }
+
     it { should belong_to(:movie) }
 
     end

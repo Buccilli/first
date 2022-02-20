@@ -1,6 +1,9 @@
 class Actor < ApplicationRecord
   # Direct associations
 
+  has_many   :roles,
+             :dependent => :destroy
+
   belongs_to :movie
 
   # Indirect associations
