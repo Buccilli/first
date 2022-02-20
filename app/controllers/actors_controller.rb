@@ -8,6 +8,7 @@ class ActorsController < ApplicationController
 
   # GET /actors/1
   def show
+    @role = Role.new
   end
 
   # GET /actors/new
@@ -24,7 +25,12 @@ class ActorsController < ApplicationController
     @actor = Actor.new(actor_params)
 
     if @actor.save
-      redirect_to @actor, notice: 'Actor was successfully created.'
+      message = 'Actor was successfully created.'
+      if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+        redirect_back fallback_location: request.referrer, notice: message
+      else
+        redirect_to @actor, notice: message
+      end
     else
       render :new
     end

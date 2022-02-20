@@ -1,0 +1,32 @@
+<!-- Form role start -->
+<%= form_with(model: @role, local: true) do |f| %>
+<!-- Form role end -->
+
+  <!-- Label and input for movie_id start -->
+  <div class="form-group">
+    <%= f.label :movie_id %>
+
+    <!-- Input for movie_id start -->
+    <%= f.text_field :movie_id, class: "form-control" %>
+    <!-- Input for movie_id end -->
+  </div>
+  <!-- Label and input for movie_id end -->
+
+  <!-- Label and input for actor_id start -->
+  <div class="form-group">
+    <%= f.label :actor_id %>
+
+    <!-- Input for actor_id start -->
+    <%= f.text_field :actor_id, class: "form-control" %>
+    <!-- Input for actor_id end -->
+  </div>
+  <!-- Label and input for actor_id end -->
+
+  <!-- Label and input for director_id start -->
+  <!-- Input for director_id start -->
+  <%= f.hidden_field :director_id, value: @director.id %>
+  <!-- Input for director_id end -->
+  <!-- Label and input for director_id end -->
+
+  <%= f.submit "Create role", class: "btn btn-block btn-outline-secondary" %>
+<% end %>
