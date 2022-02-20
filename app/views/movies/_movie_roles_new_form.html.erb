@@ -23,7 +23,7 @@
     <%= f.label :director_id %>
 
     <!-- Input for director_id start -->
-    <%= f.text_field :director_id, class: "form-control" %>
+    <%= f.collection_select :director_id, Director.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for director_id end -->
   </div>
   <!-- Label and input for director_id end -->
