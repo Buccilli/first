@@ -2,10 +2,10 @@ class Movie < ApplicationRecord
   # Direct associations
 
   has_many   :actors,
-             :dependent => :destroy
+             dependent: :destroy
 
   has_many   :roles,
-             :dependent => :destroy
+             dependent: :destroy
 
   # Indirect associations
 
@@ -16,5 +16,4 @@ class Movie < ApplicationRecord
   def to_s
     title
   end
-
 end

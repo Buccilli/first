@@ -13,7 +13,7 @@ class Api::V1::RolesController < Api::V1::GraphitiController
     role = RoleResource.build(params)
 
     if role.save
-      render jsonapi: role, status: 201
+      render jsonapi: role, status: :created
     else
       render jsonapi_errors: role
     end
@@ -33,7 +33,7 @@ class Api::V1::RolesController < Api::V1::GraphitiController
     role = RoleResource.find(params)
 
     if role.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: role
     end

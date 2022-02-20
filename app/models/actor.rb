@@ -2,7 +2,7 @@ class Actor < ApplicationRecord
   # Direct associations
 
   has_many   :roles,
-             :dependent => :destroy
+             dependent: :destroy
 
   belongs_to :movie
 
@@ -15,5 +15,4 @@ class Actor < ApplicationRecord
   def to_s
     movie.to_s
   end
-
 end

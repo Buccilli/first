@@ -13,5 +13,4 @@ class MovieResource < ApplicationResource
   has_many   :roles
 
   # Indirect associations
-
 end
