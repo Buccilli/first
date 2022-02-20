@@ -42,8 +42,14 @@ class ActorsController < ApplicationController
   # DELETE /actors/1
   def destroy
     @actor.destroy
-    redirect_to actors_url, notice: 'Actor was successfully destroyed.'
+    message = "Actor was successfully deleted."
+    if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+      redirect_back fallback_location: request.referrer, notice: message
+    else
+      redirect_to actors_url, notice: message
+    end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
